@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Duolingo-inspired Color Palette */
+    --primary: 120 84% 38%;        /* #58CC02 - Duolingo green */
+    --primary-foreground: 0 0% 98%;
+    
+    --secondary: 45 100% 51%;       /* #FFC800 - Vibrant yellow */
+    --secondary-foreground: 0 0% 9%;
+    
+    --accent: 198 93% 60%;          /* #1CB0F6 - Bright blue */
+    --accent-foreground: 0 0% 98%;
+    
+    --background: 0 0% 100%;        /* White */
+    --foreground: 0 0% 18%;         /* #2D2D2D - Dark text */
+    
+    --muted: 210 40% 98%;
+    --muted-foreground: 215 13% 65%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 18%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 18%;
+    
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --ring: 120 84% 38%;
+    
+    --radius: 0.5rem;
+  }
+  
+  .dark {
+    --primary: 120 84% 38%;
+    --primary-foreground: 0 0% 98%;
+    
+    --secondary: 45 100% 51%;
+    --secondary-foreground: 0 0% 9%;
+    
+    --accent: 198 93% 60%;
+    --accent-foreground: 0 0% 98%;
+    
+    --background: 0 0% 9%;
+    --foreground: 0 0% 98%;
+    
+    --muted: 0 0% 15%;
+    --muted-foreground: 240 5% 65%;
+    
+    --popover: 0 0% 9%;
+    --popover-foreground: 0 0% 98%;
+    
+    --card: 0 0% 9%;
+    --card-foreground: 0 0% 98%;
+    
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --ring: 120 84% 38%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom animations inspired by Duolingo */
+@keyframes bounce-gentle {
+  0%, 20%, 53%, 80%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+  40%, 43% {
+    transform: translate3d(0, -15px, 0);
+  }
+  70% {
+    transform: translate3d(0, -8px, 0);
+  }
+  90% {
+    transform: translate3d(0, -3px, 0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -468px 0;
+  }
+  100% {
+    background-position: 468px 0;
+  }
+}
+
+.animate-bounce-gentle {
+  animation: bounce-gentle 2s ease-in-out infinite;
+}
+
+.shimmer {
+  animation: shimmer 1.2s ease-in-out infinite;
+  background: linear-gradient(to right, #f6f7f8 8%, #edeef1 18%, #f6f7f8 33%);
+  background-size: 800px 104px;
+}
